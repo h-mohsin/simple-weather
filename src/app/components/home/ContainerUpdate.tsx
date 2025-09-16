@@ -1,6 +1,6 @@
 import SummaryOptions from "../other/SummaryOptions";
-import ForecastGraph from "@/app/classes/ForecastGraph";
-import Weather from "@/app/classes/Weather";
+import ForecastGraph from "../../classes/ForecastGraph";
+import Weather from "../../classes/Weather";
 import { useEffect, useRef } from "react";
 
 export default function ContainerUpdate({label, states, WeatherObject}) {

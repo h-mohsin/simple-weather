@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Temperature from "@/app/info/temp";
-import Weather from "@/app/classes/Weather";
+import Temperature from "../../info/temp";
+import Weather from "../../classes/Weather";
 
 export default function CurrentWeatherContainer({
     CurrentWeather,

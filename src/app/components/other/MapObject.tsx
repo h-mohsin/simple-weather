@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { MainMarker, SecondaryMarker } from "@/app/variables/MapMarkers";
+import { MainMarker, SecondaryMarker } from "../../variables/MapMarkers";
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Forecast from "@/app/classes/interfaces/Forecast";
+import Forecast from "../../classes/interfaces/Forecast";
 
 export default function ForecastContainer({ WeeklyForecast } : { WeeklyForecast : Forecast[] }) {
     return (

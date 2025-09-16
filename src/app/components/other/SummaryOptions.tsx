@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useState, useRef } from "react";
-import useOutsideClick from "@/app/utils/useOutsideClick";
+import useOutsideClick from "../../utils/useOutsideClick";
 
-const forecastVariables = require("@/app/variables/ForecastVariables.json");
+const forecastVariables = require("../../variables/ForecastVariables.json");
 
 function OptionLabel({ isSelector, click, children, className }) {
     return (

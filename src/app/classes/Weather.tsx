@@ -2,7 +2,7 @@ import City from "./City";
 import WeatherData from "./interfaces/WeatherData";
 import Forecast from "./interfaces/Forecast";
 
-const time = require("@/app/info/time.json")
+const time = require("../info/time.json")
 
 const Months = time.Months;
 const WeekDays = time.WeekDays;

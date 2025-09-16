@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
-import City from "@/app/classes/City";
+import { useState } from "react";
+import City from "../../classes/City";
 import ContainerUpdate from "./ContainerUpdate";
-const forecastVariables = require("@/app/variables/ForecastVariables.json");
+const forecastVariables = require("../../variables/ForecastVariables.json");
 
 export default function SummaryContainer({ WeatherObject, label, unitType }) {
     City.setUnits(unitType);
