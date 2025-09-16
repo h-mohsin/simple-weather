@@ -1,0 +1,50 @@
+:root {
+    --current-weather-width: calc(0.25 * var(--width-component-div-top));
+    --grid-item-padding-top: max(0.5 * calc(1vw + 1vh), 20px);
+    --grid-item-padding-x: max(1 * calc(1vw + 1vh), 30px);
+    --min-component-width: 330px;
+}
+
+#current-weather {
+    flex: 25 25 var(--current-weather-width);
+    min-width: var(--min-component-width);
+}
+
+#current-weather-container {
+    display: grid;
+    grid-template-areas: 'city city city time'
+        'country country country country'
+        'weather_icon weather_icon temp temp'
+        'weather_icon weather_icon briefing briefing'
+        'weather-conditions weather-conditions weather-conditions weather-conditions';
+
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 7% 10% 40% 23% 20%;
+}
+
+#map {
+    flex: 50 50 calc(0.50 * var(--width-component-div-top)); 
+    min-width: var(--min-component-width);
+}
+
+#cities {
+    flex: 25 25 calc(0.25 * (var(--width-component-div-top)));
+    min-width: var(--min-component-width);
+}
+
+#forecast {
+    flex: 25 25 calc(0.25 * var(--width-component-div-bottom));
+    transition: all .2s ease-out;
+    min-width: var(--min-component-width);
+}
+
+#forecast:hover {
+    transform: scale(1.02);
+}
+
+#summary {
+    flex: 75 75 calc(0.75 * var(--width-component-div));
+    min-width: var(--min-component-width);
+    position: relative;
+    overflow: hidden;
+}

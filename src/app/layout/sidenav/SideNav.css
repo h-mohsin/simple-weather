@@ -1,0 +1,53 @@
+:root {
+    --side-nav-width: 80px;
+    --side-nav-transition-width: 250px;
+    --side-nav-transition: all .3s ease-out;
+    --side-nav-grid-box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
+}
+
+#side-nav-component {
+    display: grid;
+    grid-template-rows: 150px repeat(auto-fit, minmax(0, 80px));
+    grid-auto-flow: row;
+
+    grid-template-columns: 180px;
+}
+
+#side-nav-component > * {
+    height: 50px;
+    width: 100%;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+
+    transition: var(--side-nav-transition);
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 25% 75%;
+    text-decoration: none;
+}
+
+#side-nav-component > *:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+    background-color: var(--tertiary-color);
+}
+
+#side-nav-component > * > h1 {
+    color: var(--secondary-lighter);
+    pointer-events: none;
+}
+
+#side-nav-component > *:hover > h1 {
+    color: white;
+}
+
+#side-nav-component:hover {
+    width: var(--side-nav-transition-width);
+}
+
+#side-nav:has(#side-nav-component:hover) + #core-grid {
+    filter: blur(2px);
+}
+

@@ -2,9 +2,7 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
     extend: {
@@ -13,8 +11,25 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+
+      gridTemplateColumns: {
+        'forecast-item' : '10% 37.5% 5% 37.5% 10%',
+        'popular-city' : '10% 80% 10%'
+      },
+
+      gridTemplateRows: {
+        'forecast-container' : '15% 85%',
+      },
+
+      boxShadow: {
+        'normal' : '0px 0px 10px rgba(0, 0, 0, .3)'
+      }
     },
   },
+  variants: {
+    width: ["responsive", "hover", "focus"]
+},
+
   plugins: [],
 };
 export default config;

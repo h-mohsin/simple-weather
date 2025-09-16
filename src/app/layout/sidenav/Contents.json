@@ -1,0 +1,22 @@
+[
+    {
+        "href" : "/" ,
+        "imageSrc" : "/home-icon.png", 
+        "imageAlt" : "home", 
+        "label" : "Home"
+    },
+
+    {
+        "href" : "/map" ,
+        "imageSrc" : "/map.png", 
+        "imageAlt" : "map", 
+        "label" : "Map"
+    },
+
+    {
+        "href" : "/forecast" ,
+        "imageSrc" : "/forecast.png", 
+        "imageAlt" : "forecast", 
+        "label" : "Forecast"
+    }
+]

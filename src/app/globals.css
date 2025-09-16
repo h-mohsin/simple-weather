@@ -3,31 +3,96 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --core-color: #315E97;
+    --secondary-color: #658dbf;
+    --tertiary-color: #2e5487;
+    --core-lighter: #3f6ca6;
+    --secondary-lighter: #8bb4e6;
+
+    --bg-light: #6089BD;
+    --bg-dark: #3b659c;
+
+    --components-padding-x: calc(3vw);
+    --components-padding-y: max(calc(5vh), var(--components-gap));
+    --components-padding-y-search-bar: max(calc(2vh), var(--components-gap));
+    --components-gap: calc(0.7 * (1vw + 1vh));
+    
+    --width-main-screen: calc(100% - var(--side-nav-width));
+    --width-component-div: calc(var(--width-main-screen) - (2 * var(--components-padding-x)));
+    --width-component-div-bottom: calc(var(--width-component-div) - var(--components-gap));
+    --width-component-div-top: calc(var(--width-component-div-bottom) - var(--components-gap));
+
+    --width-search-bar: calc(var(--width-main-screen) - (var(--components-padding-x)))
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background-image: linear-gradient(var(--bg-light), var(--bg-dark));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+#core-grid {
+    margin-left: var(--side-nav-width);
+
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% - var(--side-nav-width));
+    height: 100% ;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding: var(--components-padding-y-search-bar) var(--components-padding-x) var(--components-padding-y);
+    gap: var(--components-gap);
+    
+    height: 100%;
+    overflow-y: auto;
+    flex: 90 90 90%;
+}
+
+main > * {
+    border-radius: max(calc(1vw + 1vh), 30px);
+    height: calc(0.5 * (100% - var(--components-gap)));
+    min-height: 300px;
+    box-shadow: 0px 0px 1vw rgba(0, 0, 0, .3);
+    border: 0px;
+}
+
+main > *:empty {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), var(--secondary-color) 50%, rgba(0, 0, 0, 0));
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes loading {
+    0% {
+        filter: brightness(100%);
+    }
+
+    50% {
+        filter: brightness(85%)
+    }
+
+    100% {
+        filter: brightness(100%)
+    }
 }

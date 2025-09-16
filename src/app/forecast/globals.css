@@ -1,0 +1,9 @@
+main > * {
+    flex: 1 1 calc(.12 * var(--width-main-screen));
+    min-width: 150px ;
+
+    display: grid;
+    grid-template-areas: 'day day' 'date date' 'icon icon' 'temp temp' 'briefing briefing';
+    grid-template-rows: 7% 7% 40% 30% 16%;
+    transition: all .2s;
+}

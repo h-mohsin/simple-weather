@@ -1,0 +1,16 @@
+#main-marker {
+    z-index: 10;
+}
+
+#main-marker > *, #secondary-marker {
+    transition: all 0.2s;
+}
+
+#main-marker:hover > *, #secondary-marker:hover {
+    filter: brightness(115%);
+    transform: scale(1.08);
+}
+
+#main-marker:hover > * {
+    transform-origin: 50% 100%;
+}

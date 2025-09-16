@@ -1,0 +1,21 @@
+{
+    "imperial" : {
+        "Speed" : "mph",
+        "Temperature" : "°F",
+        "Distance" : "mi",
+
+        "Temperature_GET": "_f",
+        "Speed_GET": "_mph",
+        "Distance_GET": "_miles"
+    },
+
+    "metric" : {
+        "Speed" : "km/h",
+        "Temperature" : "°C",
+        "Distance" : "km",
+
+        "Temperature_GET": "_c",
+        "Speed_GET": "_kph",
+        "Distance_GET": "_km"
+    }
+}

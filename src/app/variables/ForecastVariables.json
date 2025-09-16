@@ -1,0 +1,5 @@
+{
+    "Wind Speed" : "maxwind_mph",
+    "Temperature" : "avgtemp_c",
+    "Humidity" : "avghumidity"
+}

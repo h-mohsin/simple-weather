@@ -1,0 +1,105 @@
+:root {
+    --search-bar-height: 50px;
+    --toggle-bar-height: 35px;
+    --search-bar-width: calc(var(--width-main-screen) - (2 * var(--components-padding-x)));
+    --search-bar-padding: 0.75rem;
+}
+
+#search-bar-main {
+    background: linear-gradient(to right, var(--core-color) 1%, rgba(0, 0, 0, 0));
+    transition: all .2s linear;
+    overflow: hidden;
+}
+
+#search-bar {
+    padding-left: 0.5vw;
+    font-size: clamp(1rem, 1.6vh, 65px);
+    background-color: rgba(0, 0, 0, 0);
+    text-emphasis-color: white;
+    outline: 0;
+    color: white;
+    font-family: inherit;
+}
+
+#search-bar::placeholder {
+    color: white;
+}
+
+#search-bar:focus::placeholder {
+    color: transparent;
+}
+
+#search-bar::placeholder {
+    transition: all 0.13s;
+}
+
+#search-bar:not(:focus-within):not(:hover)+#search-bar-list {
+    visibility: hidden;
+}
+
+#search-bar:focus+#search-bar-list {
+    visibility: visible;
+}
+
+#search-icon,
+#search-bar {
+    transition: all 0.15s;
+}
+
+#search-bar-main:has(#search-bar-container):has(#search-bar:focus)>#search-icon {
+    transform: translateX(calc(-100% - var(--search-bar-padding)));
+}
+
+#search-bar:focus {
+    transform: translateX(calc(-2% - var(--search-bar-padding)));
+}
+
+#search-bar-container {
+    transition: var(--side-nav-transition);
+}
+
+#search-bar-list {
+    height: auto;
+    visibility: hidden;
+    transition: all 1s;
+    transform: translateX(calc(-2% - var(--search-bar-padding)));
+    width: var(--search-bar-width);
+}
+
+#search-bar-list>* {
+    text-decoration: none;
+    width: 100%;
+    z-index: 10;
+}
+
+@keyframes show {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    100% {
+        opacity: 0;
+    }
+}
+
+#search-bar-list > * > * {
+    transition: all .2s;
+}
+
+#search-bar-container:has(#search-bar:focus) > #search-bar-list > * {
+    opacity: 0;
+    animation: show 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+}
+
+#search-bar-container:has(#search-bar:not(:focus-within)) > #search-bar-list > * {
+    animation: hide 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+}
+
+#core-grid:has(div):has(#search-bar-main):has(#search-bar-container):has(#search-bar:focus) > main {
+    filter: blur(4px);
+}
