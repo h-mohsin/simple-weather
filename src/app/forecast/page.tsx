@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import ForecastDay from "./ForecastDay";
 import __init from "../shared";
 
@@ -37,6 +39,3 @@ export default async function Page({
     );
 }
 
-/*
-
-*/

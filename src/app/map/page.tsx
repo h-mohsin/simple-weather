@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import MapObject from "../components/other/MapObject";
 import __init from "../shared";
 

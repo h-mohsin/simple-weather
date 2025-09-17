@@ -1,5 +1,3 @@
-'use server'
-
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
@@ -11,9 +9,6 @@ import "./layout/sidenav/SideNav.css";
 import SearchBar from "./layout/search-bar/SearchBar";
 import SideNav from "./layout/sidenav/SideNav";
 
-import { revalidatePath } from 'next/cache';
-revalidatePath('/', 'layout')
-
 const gabarito = Bricolage_Grotesque({
     weight: "400",
     subsets: ["latin"],
@@ -23,11 +18,13 @@ export const metadata: Metadata = {
     title: "Weather Website",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    "use server";
+
     return (
         <html lang="en">
             <body className={gabarito.className}>

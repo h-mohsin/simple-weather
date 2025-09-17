@@ -6,7 +6,7 @@ const times = require("../info/time.json");
 export default function ForecastDay({ data, bgColor, altDay }) {
     return (
         <Link
-            href="/"
+            href="/home"
             className="relative w-full p-[var(--grid-item-padding-x)] py-[var(--grid-item-padding-top)]"
             style={{ backgroundColor: bgColor }}
         >

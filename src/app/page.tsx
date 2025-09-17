@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import CurrentWeatherContainer from "./components/home/CurrentWeatherContainer";
 import ForecastContainer from "./components/home/ForecastContainer";
 import Map from "./components/home/Map";
