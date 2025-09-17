@@ -5,7 +5,7 @@ import { MainMarker, SecondaryMarker } from "../../variables/MapMarkers";
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+import L, { DivIconOptions } from "leaflet";
 
 import Weather from "../../classes/Weather";
 import City from "../../classes/City";
@@ -17,7 +17,7 @@ const icon_class = L.DivIcon.extend({
     options: {
         className: "bg-[rgba(0, 0, 0, 0)]",
     },
-});
+}) as new (options: DivIconOptions) => L.DivIcon;
 
 export default function MapObject({ className, cities, weather, unitType, fullScreen }) {
     const router = useRouter();
