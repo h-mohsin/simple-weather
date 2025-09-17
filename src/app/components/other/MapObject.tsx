@@ -63,7 +63,7 @@ export default function MapObject({ className, cities, weather, unitType, fullSc
 
             {fullScreen == true && <LocationOnClick/>}
 
-            <Marker
+            {/* <Marker
                 position={CurrentWeather.Coordinates}
                 icon={
                     new icon({
@@ -75,7 +75,7 @@ export default function MapObject({ className, cities, weather, unitType, fullSc
                         iconAnchor: [main_icon_len / 2, main_icon_len],
                     })
                 }
-            />
+            /> */}
 
             {PopularCities.map((PopularCity: City) => (
                 <Marker
