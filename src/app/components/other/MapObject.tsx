@@ -77,7 +77,7 @@ export default function MapObject({ className, cities, weather, unitType, fullSc
                 }
             /> */}
 
-            {PopularCities.map((PopularCity: City) => (
+            {/* {PopularCities.map((PopularCity: City) => (
                 <Marker
                     key={PopularCity.Location}
                     position={PopularCity.Coordinates}
@@ -102,7 +102,7 @@ export default function MapObject({ className, cities, weather, unitType, fullSc
                         },
                     }}
                 />
-            ))}
+            ))} */}
         </MapContainer>
     );
 }
