@@ -13,7 +13,7 @@ import City from "../../classes/City";
 const main_icon_len = 80;
 const secondary_icon_len = 40;
 
-const icon = L.DivIcon.extend({
+const icon_class = L.DivIcon.extend({
     options: {
         className: "bg-[rgba(0, 0, 0, 0)]",
     },
@@ -66,7 +66,7 @@ export default function MapObject({ className, cities, weather, unitType, fullSc
             <Marker
                 position={CurrentWeather.Coordinates}
                 icon={
-                    new icon({
+                    new icon_class({
                         html: MainMarker(
                             CurrentWeather.TemperatureString,
                             CurrentWeather.ConditionIcon
@@ -82,7 +82,7 @@ export default function MapObject({ className, cities, weather, unitType, fullSc
                     key={PopularCity.Location}
                     position={PopularCity.Coordinates}
                     icon={
-                        new icon({
+                        new icon_class({
                             html: SecondaryMarker(
                                 PopularCity.TemperatureString
                             ),
