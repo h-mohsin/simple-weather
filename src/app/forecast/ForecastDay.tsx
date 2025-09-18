@@ -5,8 +5,7 @@ const times = require("../info/time.json");
 
 export default function ForecastDay({ data, bgColor, altDay }) {
     return (
-        <Link
-            href="/home"
+        <div
             className="relative w-full p-[var(--grid-item-padding-x)] py-[var(--grid-item-padding-top)]"
             style={{ backgroundColor: bgColor }}
         >
@@ -22,6 +21,6 @@ export default function ForecastDay({ data, bgColor, altDay }) {
             />
             <Temperature data = {data.max} unit={City.Units.Temperature}>{data.min && <sub className="text-xl">/ {Math.round(data.min)}°</sub>}</Temperature>
             <h2 className='relative w-full h-full text-center text-xl' style = {{gridArea: 'briefing'}}>{data.condition}</h2>
-        </Link>
+        </div>
     );
 }

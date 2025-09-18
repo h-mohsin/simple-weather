@@ -1,9 +1,12 @@
+
+
 import Link from "next/link";
 import Forecast from "../../classes/interfaces/Forecast";
 
 export default function ForecastContainer({ WeeklyForecast } : { WeeklyForecast : Forecast[] }) {
     return (
-        <Link href={"/forecast"} className="bg-secondary" id="forecast">
+        // <Link href = "/forecast"
+        <div className="bg-secondary" id="forecast">
             <div className="relative grid w-full h-full p-[var(--grid-item-padding-x)] pt-[var(--grid-item-padding-top)] grid-rows-[12%88%]">
                 <h1>Forecast</h1>
                 <div className="relative grid w-full h-full grid-rows-6">
@@ -18,7 +21,7 @@ export default function ForecastContainer({ WeeklyForecast } : { WeeklyForecast 
                     ))}
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
 

@@ -28,7 +28,7 @@ export default async function Home({
             <SummaryContainer
                 WeatherObject={JSON.stringify(CurrentWeather)}
                 label="Summary"
-                unitType={unitType}
+                unitType={unitType || "imperial"}
             />
         </main>
     );

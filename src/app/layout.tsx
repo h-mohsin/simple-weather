@@ -8,6 +8,7 @@ import "./layout/sidenav/SideNav.css";
 
 import SearchBar from "./layout/search-bar/SearchBar";
 import SideNav from "./layout/sidenav/SideNav";
+import { usePathname } from "next/navigation";
 
 const gabarito = Bricolage_Grotesque({
     weight: "400",
@@ -24,7 +25,7 @@ export default async function RootLayout({
     children: React.ReactNode;
 }>) {
     "use server";
-
+    
     return (
         <html lang="en">
             <body className={gabarito.className}>

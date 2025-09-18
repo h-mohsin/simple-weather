@@ -28,7 +28,7 @@ function PopularCity({ city }) {
             />
 
             <h1 className="relative text-left ml-4 h-fit leading-[1.5] my-auto">
-                {city.City}<h3 className="text-left h-full mb-auto mt-0">{city.Country}</h3>
+                {city.City}<div><h3 className="text-left h-full mb-auto mt-0">{city.Country}</h3></div>
             </h1>
 
             <h2 className="m-auto tabular-nums">{city.TemperatureString}</h2>

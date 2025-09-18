@@ -42,6 +42,7 @@ export default class City {
     }
 
     static setUnits(unitType : string) {
+        console.log(unitType);
         City.UnitType = unitType;
         City.Units = allUnitTypes[unitType];
     }

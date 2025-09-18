@@ -5,15 +5,33 @@ import GetPopularCities from "./info/popular_cities";
 
 const cities = require("./info/cities.json");
 
+function invalid(x : any) {
+    return x == null || x == 'null' || x == undefined || x == 'undefined';
+}
+
 export default async function __init(searchParams) {
+    let unitType = searchParams.unit;
+
+    if (invalid(unitType)) {
+        unitType = "imperial";
+    }
+
+    City.setUnits(unitType);
+
+
     let location = decodeURIComponent(searchParams.location);
 
-    const coordinates = (searchParams.lat == undefined &&
-        searchParams.lng == undefined &&
-        cities[location].split(" ")) || [searchParams.lat, searchParams.lng];
+    let coordinates;
 
-    const unitType = searchParams.unit;
-    City.setUnits(unitType);
+    if (invalid(searchParams.lat) || invalid(searchParams.lng)) {
+        if (invalid(location)) {
+            location = "Tokyo, Japan";
+        }
+    
+        coordinates = cities[location].split(" ");
+    } else {
+        coordinates = [searchParams.lat, searchParams.lng];
+    }
 
     const location_data = await GetWeather(coordinates[0], coordinates[1]);
     const PopularCities = await GetPopularCities();
